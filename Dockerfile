@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     libnss3 \
     libxss1 \
     fonts-liberation \
-    libatk-bridge2.0-0 \
+    libgdk-pixbuf-xlib-2.0-0 \
     libgtk-3-0 \
     libdrm2 \
     libasound2 \

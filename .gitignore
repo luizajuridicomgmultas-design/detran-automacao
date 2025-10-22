@@ -1,0 +1,4 @@
+*.key
+.env
+govbr_cookies.json
+__pycache__/

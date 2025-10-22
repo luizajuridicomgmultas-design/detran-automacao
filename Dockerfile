@@ -2,13 +2,12 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Instala somente o mínimo necessário para Playwright/Chromium headless
 RUN apt-get update && apt-get install -y \
     wget \
     libnss3 \
     libxss1 \
     fonts-liberation \
-    libgdk-pixbuf-xlib-2.0-0 \
+    libatk-bridge2.0-0 \
     libgtk-3-0 \
     libdrm2 \
     libasound2 \
@@ -21,7 +20,6 @@ RUN apt-get update && apt-get install -y \
     libpango-1.0-0 \
     libpangocairo-1.0-0 \
     libcairo2 \
-    libgdk-pixbuf2.0-0 \
     libx11-xcb1 \
     && rm -rf /var/lib/apt/lists/*
 
@@ -32,4 +30,3 @@ RUN playwright install
 COPY . .
 
 CMD ["python", "processar_lote.py"]
-

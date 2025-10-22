@@ -1,0 +1,23 @@
+{
+  "name": "Detran-Automacao",
+  "services": [
+    {
+      "name": "app",
+      "build": ".",
+      "runCommand": "python processar_lote.py",
+      "crons": [
+        {
+          "schedule": "0 8 * * *",
+          "command": "python processar_lote.py"
+        }
+      ],
+      "env": {
+        "GOVBR_CPF": "seu_cpf_aqui",
+        "GOVBR_PASSWORD_ENCRYPTED": "sua_senha_criptografada",
+        "INPUT_CSV": "input.csv",
+        "OUTPUT_CSV": "output.csv",
+        "COOKIES_FILE": "govbr_cookies.json"
+      }
+    }
+  ]
+}
